@@ -4,17 +4,8 @@
      if ($("option:selected", this).attr("data-type") == "home") {
        if ($("option:selected", this).attr("data-id") == "ministry") {
          var ministry = $("option:selected", this).attr("data-id");
-         console.log(ministry);
-
-         var datadd= loadAllMinistry("all.ministry.php");
-
-         $("#office_name").html(datadd);
-
-         header_title_arr.push($(this).html());
-
-         lastPage = "ministry";
-
-         lastHeaderTitle = $(this).html();
+         //console.log(ministry);
+         loadAllMinistry("all.ministry.php");
        } else {
         var parent_domain = $(this).attr("data-domain");
          loadDivisionList("division.office.php", $(this).attr("data-domain")); 
@@ -23,39 +14,48 @@
   });
 
 
+
+
+
+
+  // load all Ministries function
   function loadAllMinistry(fileName) {
     console.log(fileName);
     $.ajax({
       type: "POST",
       url: host + fileName,
       success: function (responseData) {
- 
-       console.log(responseData);
-       $("#office_name").html(responseData);
-            
- 
+             // gatherData(responseData);
+     //  console.log(responseData);
+      $("#Responselist").html(responseData);
+      //   var len = 0;         
+        const liElements = document.querySelectorAll("li"); //58
+        //console.log(liElements);
 
-       
-        
-        
+        liElements.forEach((link) => {
+          const replacement = document.createElement("option");
 
-        // $("#ministry-list li").on("click", function () {
-        //   if ($(this).attr("data-type") == "ministry-list") {
-        //     window.location.hash = "child-ministry";
-        //     loadMinistryChild(
-        //       "child.ministry.php",
-        //       $(this).attr("data-id"),
-        //       $(this).attr("data_domain")
-        //     );
-        //     $("#header2").find(".title").html($(this).html());
-        //     header_title_arr.push($(this).html());
-        //     lastPage = "child-ministry";
-        //     lastHeaderTitle = $(this).html();
-        //     lastDataId = $(this).attr("data-id");
-        //     lastDomain = $(this).attr("data_domain");
-        //   }
-        // });
-      },
+          console.log(link.outerHTML);
+          //console.log(link.attributes.id.value);
+          console.log(link.attributes.data_domain.value); // it will append after value attr.
+          console.log(link.outerText); // it will be option text
+          //console.log(link.dataset.id); // it will be option value
+
+          // copy attributes
+          for (let i = 0; i < links.length; i++) {
+            //48
+            const textData = link.outerText; 
+            const data_domain = link.attributes.data_domain.value;
+            const idData = link.dataset.id; 
+
+            replacement.value = idData;  //option > .... </
+            replacement.text = textData;
+            replacement.setAttribute("data_domain", data_domain);
+          }
+
+          console.log(replacement.outerHTML );
+          $("#office_name_list").append(replacement.outerHTML);
+        });}
     });
   }
- 
+  
