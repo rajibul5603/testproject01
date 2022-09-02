@@ -24,28 +24,60 @@
             <div class="form-group">
                 <label for="sel1">অফিসের ধরণ:</label>
                 <select class="form-control" id="office_type_id" name="office_type_id">
-                    <option data-type="" data-id="" value="">নির্বাচন করুন</option>
-                    <option data-type="home" data-id="ministry" value="0">সকল মন্ত্রণালয়</option>
-                    <option data-type="divisional" data-id="1" data-domain="www.barisaldiv.gov.bd" value="1">বরিশাল বিভাগ</option>
-                    <option data-type="divisional" data-id="2" data-domain="www.chittagongdiv.gov.bd" value="2">চট্টগ্রাম বিভাগ</option>
-                    <option data-type="divisional" data-id="3" data-domain="www.dhakadiv.gov.bd" value="3">ঢাকা বিভাগ</option>
-                    <option data-type="divisional" data-id="4" data-domain="www.khulnadiv.gov.bd" value="4">খুলনা বিভাগ</option>
-                    <option data-type="divisional" data-id="5" data-domain="www.rajshahidiv.gov.bd" value="5">রাজশাহী বিভাগ</option>
-                    <option data-type="divisional" data-id="6" data-domain="www.rangpurdiv.gov.bd" value="6">রংপুর বিভাগ</option>
-                    <option data-type="divisional" data-id="7" data-domain="www.sylhetdiv.gov.bd" value="7">সিলেট বিভাগ</option>
-                    <option data-type="divisional" data-id="8" data-domain="www.mymensinghdiv.gov.bd" value="8">ময়মনসিংহ বিভাগ</option>
+                    <option id="nullValueOption" data-type="" data-id="" value="">নির্বাচন করুন</option>
+                    <option data-type=" home" data-id="ministry" value="0">মন্ত্রণালয়</option>
+                    <option data-type="home" data-id="division" value="0">বিভাগীয় কার্যালয়</option>
                 </select>
             </div>
 
             <div id="office_name" name="office_name" class=" form-group">
-
+                <label for="office">মন্ত্রণালয় /বিভাগ </label>
                 <select class="form-control" name="office_name_list" id="office_name_list">
-                    <option value="">Select One</option>
+                    <!-- <option id="nullValueOption" value="">নির্বাচন করুন</option> -->
+                </select>
+            </div>
+
+            <div id="child_office_name" name="child_office_name" class=" form-group">
+                <label for="child_office_name_list">কার্যালয়/ বিভাগীয় কার্যালয়</label>
+                <select class="form-control" name="child_office_name_list" id="child_office_name_list">
+                    <!-- <option id="nullValueOption" value="">নির্বাচন করুন</option> -->
+                </select>
+            </div>
+
+            <div id="dist_name" name="dist_name" class=" form-group">
+                <label for="district_name">জেলা </label>
+                <select class="form-control" name="district_name" id="district_name">
+                    <option id="nullValueOption" value="">নির্বাচন করুন</option>
+                </select>
+            </div>
+            <div id="dist_office_name" name="dist_office_name" class="form-group">
+                <label for="district_office_name">জেলার কার্যালয় </label>
+                <select class="form-control" name="district_office_name" id="district_office_name">
+                    <option id="nullValueOption" value="">নির্বাচন করুন</option>
+                </select>
+            </div>
+            <div id="upaz_name" name="upaz_name" class="form-group">
+                <label for="upazila_name">উপজেলা </label>
+                <select class="form-control" name="upazila_name" id="upazila_name">
+                    <option id="nullValueOption" value="">নির্বাচন করুন</option>
+                </select>
+            </div>
+            <div id="upazila_off_name" name="upazila_off_name" class="form-group">
+                <label for="upazila_office_name">উপজেলার কার্যালয় </label>
+                <select class="form-control" name="upazila_office_name" id="upazila_office_name">
+                    <option id="nullValueOption" value="">নির্বাচন করুন</option>
+                </select>
+            </div>
+
+            <div id="officer" name="officer" class=" form-group">
+                <label for="officer_list">কর্মকর্তার নাম ও পদবি </label>
+                <select class="form-control" name="officer_list" id="officer_list">
+                    <option id="nullValueOption" value="">নির্বাচন করুন</option>
                 </select>
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 
